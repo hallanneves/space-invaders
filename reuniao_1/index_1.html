@@ -1,8 +1,6 @@
 <html>
     <head>
         <script src="desenha.js"></script> 
-        <script src="objeto.js"></script> 
-        <script src="nave.js"></script> 
 
     </head>
     <body>
@@ -11,13 +9,14 @@
 
     <script>
 
-        var objetos = []
 
         const myCanvas = document.getElementById("game")
         const ctx = myCanvas.getContext("2d");
 
-        var nave = new Nave(100,100,2)
-        objetos.push(nave)
+        const velocidadeNave = 2;
+
+        var xNave = 100
+        var yNave = 100
 
         var teclas = []
 
@@ -37,16 +36,25 @@
             }
         });
 
-        function atualizaTela(){
-
-            desenhaFundo(ctx, myCanvas)
-
-
-            for(var i = 0; i < objetos.length; i++){
-                objetos[0].desenha(ctx)
-                objetos[0].processa(teclas)
+        function processaNavePos(){
+            if (teclas['a'.charCodeAt(0) - 97]){
+                xNave -= velocidadeNave;
             }
+            if (teclas['d'.charCodeAt(0) - 97]){
+                xNave += velocidadeNave;
+            }
+            if (teclas['w'.charCodeAt(0) - 97]){
+                yNave -= velocidadeNave;
+            }
+            if (teclas['s'.charCodeAt(0) - 97]){
+                yNave += velocidadeNave;
+            }
+        }
 
+        function atualizaTela(){
+            processaNavePos()
+            desenhaFundo(ctx, myCanvas)
+            desenhaNave(xNave, yNave, ctx)
             setTimeout(function() {   
                 atualizaTela();
             }, 10)
