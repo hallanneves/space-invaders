@@ -3,6 +3,8 @@
         <script src="desenha.js"></script> 
         <script src="objeto.js"></script> 
         <script src="nave.js"></script> 
+        <script src="inimigo.js"></script> 
+        
 
     </head>
     <body>
@@ -18,6 +20,27 @@
 
         var nave = new Nave(100,100,2)
         objetos.push(nave)
+
+        var inimigo = new Inimigo(100,100,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(150,100,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(200,100,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(250,100,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(300,100,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(150,150,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(200,150,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(250,150,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(300,150,5)
+        objetos.push(inimigo)
+        var inimigo = new Inimigo(350,150,5)
+        objetos.push(inimigo)
 
         var teclas = []
 
@@ -41,10 +64,9 @@
 
             desenhaFundo(ctx, myCanvas)
 
-
             for(var i = 0; i < objetos.length; i++){
-                objetos[0].desenha(ctx)
-                objetos[0].processa(teclas)
+                objetos[i].desenha(ctx)
+                objetos[i].processa(teclas)
             }
 
             setTimeout(function() {   

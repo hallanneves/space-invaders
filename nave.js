@@ -1,6 +1,8 @@
 
 class Nave extends Objeto{
     desenha(ctx){
+        //cor
+        ctx.strokeStyle = '#000000';
         ctx.beginPath();
         //Desenha triangulo
         ctx.moveTo(this.x , this.y);
