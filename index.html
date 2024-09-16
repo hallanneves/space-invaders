@@ -4,6 +4,7 @@
         <script src="objeto.js"></script> 
         <script src="nave.js"></script> 
         <script src="inimigo.js"></script> 
+        <script src="tiro.js"></script> 
         
 
     </head>
@@ -18,29 +19,33 @@
         const myCanvas = document.getElementById("game")
         const ctx = myCanvas.getContext("2d");
 
-        var nave = new Nave(100,100,2)
+        var nave = new Nave(100,500,2)
         objetos.push(nave)
 
-        var inimigo = new Inimigo(100,100,5)
+        var tiro = new Tiro(0,0,5, nave);
+        objetos.push(tiro)
+
+        var inimigo = new Inimigo(100, 100, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(150,100,5)
+        var inimigo = new Inimigo(150, 100, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(200,100,5)
+        var inimigo = new Inimigo(200,100, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(250,100,5)
+        var inimigo = new Inimigo(250, 100, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(300,100,5)
+        var inimigo = new Inimigo(300, 100, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(150,150,5)
+        var inimigo = new Inimigo(150, 150, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(200,150,5)
+        var inimigo = new Inimigo(200, 150, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(250,150,5)
+        var inimigo = new Inimigo(250, 150, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(300,150,5)
+        var inimigo = new Inimigo(300, 150, 5, tiro)
         objetos.push(inimigo)
-        var inimigo = new Inimigo(350,150,5)
+        var inimigo = new Inimigo(350, 150, 5, tiro)
         objetos.push(inimigo)
+
 
         var teclas = []
 
